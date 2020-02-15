@@ -55,11 +55,24 @@ namespace SummarizeTempsLab
                     }
                 }
                 int totalTemps = numAbove + numBelow;
-                
+                double averageTemps = sumTemp / totalTemps;
+
                 Console.WriteLine( "Number of temps above threshold: " + numAbove);
                 Console.WriteLine( "Number of temps below threshold: " + numBelow);
                 Console.WriteLine( "Sum of temps: " + sumTemp);
-                Console.WriteLine("Total days :" + totalTemps);
+                Console.WriteLine( "Total days :" + totalTemps);
+                Console.WriteLine( "Average Temp: " + averageTemps);
+
+                using (StreamWriter sw = new StreamWriter("output.txt"))
+
+                {
+                    sw.WriteLine("Number of temps above threshold: " + numAbove);
+                    sw.WriteLine("Number of temps below threshold: " + numBelow);
+                    sw.WriteLine("Sum of temps: " + sumTemp);
+                    sw.WriteLine("Total days :" + totalTemps);
+
+                }
+                
             }
             else
             {
